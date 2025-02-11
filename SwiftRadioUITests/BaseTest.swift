@@ -12,6 +12,7 @@ import SwiftRadio
 class SwiftRadioUITests: XCTestCase {
     let app = XCUIApplication()
     typealias popupId = AccessIDs.PopupInfoView
+    typealias aboutId = AccessIDs.AboutView
     
     // MARK: - Setup
     override func setUp() {

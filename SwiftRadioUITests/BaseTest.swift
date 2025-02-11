@@ -1,5 +1,5 @@
 //
-//  SwiftRadioUITests.swift
+//  BaseTest.swift
 //  SwiftRadioUITests
 //
 //  Created by Jonah Stiennon on 12/3/15.
@@ -9,8 +9,10 @@
 import XCTest
 import SwiftRadio
 
-class SwiftRadioUITests: XCTestCase {
+class BaseTest: XCTestCase {
+    
     let app = XCUIApplication()
+    
     typealias popupId = AccessIDs.PopupInfoView
     typealias aboutId = AccessIDs.AboutView
     
@@ -26,33 +28,36 @@ class SwiftRadioUITests: XCTestCase {
     }
     
     // MARK: - Methods
+    // тап элемента по accessibilityIDs
     func tapElement(withIdentifier identifier: String) {
         let button = app.buttons[identifier]
         
-        if button.exists {
+        if button.exists && button.isHittable {
             button.tap()
         } else {
-            XCTFail("Button with identifier \(identifier) does not exist.")
+            XCTFail("Button with identifier \(identifier) not found or not hittable.")
         }
     }
     
+    // тап элемента по индексу
     func tapElement(withIndex index: Int) {
         let index = app.buttons.element(boundBy: index)
         
         if index.isHittable {
-            
             index.tap()
         } else {
             XCTFail("Button with index \(index) does not exist")
         }
     }
     
+    // тап по координате
     func tapAt(coordinates x: Double, y: Double) {
         let coordinate = app.coordinate(withNormalizedOffset: CGVector(dx: x, dy: y))
         
         coordinate.tap()
     }
     
+    // тап элемента по предикату
     func tapElement(withPredicate predicate: NSPredicate, timeout: TimeInterval = 3) {
         let element = app.descendants(matching: .any).element(matching: predicate)
         
@@ -61,18 +66,6 @@ class SwiftRadioUITests: XCTestCase {
             element.tap()
         } else {
             XCTFail("Element with predicate \(predicate) does not exist.")
-        }
-    }
-    
-    func closePopup() {
-        let closeButton = app.buttons["popupCloseButton"]
-        
-        if closeButton.isHittable {
-            let checkCloseButton = closeButton.wait(for: \.isHittable, toEqual: true, timeout: 5)
-            XCTAssertTrue(checkCloseButton)
-            closeButton.tap()
-        } else {
-            XCTFail("Popup button \(closeButton) does not exist.")
         }
     }
     

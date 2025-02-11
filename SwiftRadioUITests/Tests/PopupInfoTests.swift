@@ -11,16 +11,36 @@ import XCTest
 class PopupInfoTests: BaseTest {
     private lazy var popupInfoPage = PopupInfoPage()
     
-    func testWebsiteBtnWorks() {
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
+        
+        app.launch()
         pressBackOrBurgerNavBar()
-        popupInfoPage
-            .tapWebsiteBtn()
     }
     
-    func testEmailBtnWorks() {
-        pressBackOrBurgerNavBar()
+    func testWebsiteBtnWorks() {
         popupInfoPage
-            .testCaseCount()
-            .tapEmailBtn()
+            .tapWebsiteBtn()
+        popupInfoPage
+            .verifyWebsiteUrl()
+    }
+    
+    func testCloseBtnWorks() {
+        popupInfoPage
+            .tapCloseBtn()
+    }
+    
+    func testAboutBtnWorks() {
+        popupInfoPage
+            .tapAboutBtn()
+    }
+    
+    func testLogoImageShouldBeVisible() {
+        XCTAssertTrue(popupInfoPage.isLogoDisplayed())
+    }
+    
+    func testVerifyAuthors()  {
+
     }
 }

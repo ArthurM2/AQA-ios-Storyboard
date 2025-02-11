@@ -21,7 +21,7 @@ public enum AccessIDs {
         public static let popupAboutButton = "popupAboutButton"
         public static let popupWebsiteButton = "popupWebsiteButton"
         public static let popupProjectLabel = "popupProjectLabel"
-        public static let popipProjectAuthor = "popupAuthorLabel"
+        public static let popupProjectAuthor = "popupAuthorLabel"
     }
     
     public enum AboutView {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */; };
+		2C5545BD1C1124DE00728469 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* BaseTest.swift */; };
 		53113F39230C720900462C0E /* ShareActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53113F38230C720900462C0E /* ShareActivity.swift */; };
 		5FDEE0221F72FF980064333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */; };
 		6258DCD822D93A3500166C65 /* LogoShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258DCD722D93A3500166C65 /* LogoShareView.swift */; };
@@ -101,7 +101,7 @@
 
 /* Begin PBXFileReference section */
 		2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioUITests.swift; sourceTree = "<group>"; };
+		2C5545BC1C1124DE00728469 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53113F38230C720900462C0E /* ShareActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareActivity.swift; sourceTree = "<group>"; };
 		5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,7 +145,19 @@
 		CF72ACE621F714D000461EED /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8EA9FBEC2D5B77C500C0EF9A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PopupInfoTests.swift,
+			);
+			target = 2C5545B91C1124DE00728469 /* SwiftRadioUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8E1442C22D3F7C3100A9DAB2 /* Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8EA9FBEC2D5B77C500C0EF9A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tests; sourceTree = "<group>"; };
+		8E1442C32D3F7C3C00A9DAB2 /* Pages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Pages; sourceTree = "<group>"; };
 		8ED2B16B2CE71834009F33D7 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -185,8 +197,10 @@
 		2C5545BB1C1124DE00728469 /* SwiftRadioUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8E1442C32D3F7C3C00A9DAB2 /* Pages */,
+				8E1442C22D3F7C3100A9DAB2 /* Tests */,
 				8ED2B16B2CE71834009F33D7 /* Extensions */,
-				2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */,
+				2C5545BC1C1124DE00728469 /* BaseTest.swift */,
 				2C5545BE1C1124DE00728469 /* Info.plist */,
 			);
 			path = SwiftRadioUITests;
@@ -353,6 +367,7 @@
 				2C5545C01C1124DE00728469 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				8E1442C32D3F7C3C00A9DAB2 /* Pages */,
 				8ED2B16B2CE71834009F33D7 /* Extensions */,
 			);
 			name = SwiftRadioUITests;
@@ -501,7 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED2B16A2CE51496009F33D7 /* AccessIDs.swift in Sources */,
-				2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */,
+				2C5545BD1C1124DE00728469 /* BaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
